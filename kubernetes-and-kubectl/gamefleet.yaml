@@ -1,0 +1,18 @@
+apiVersion: "agones.dev/v1"
+kind: Fleet
+metadata:
+  name: mirror-kcp-server-fleet
+spec:
+  replicas: 2
+  template:
+    spec:
+      ports:
+        - name: default
+          portPolicy: Dynamic
+          containerPort: 7777
+          protocol: TCP
+      template:
+        spec:
+          containers:
+          - name: mirror-kcp-server-container
+            image: docker.io/daansleven/mirror_kcp_server:latest

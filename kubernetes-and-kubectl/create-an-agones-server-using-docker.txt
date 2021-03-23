@@ -1,0 +1,3 @@
+./minikube.exe start -p agones --kubernetes-version v1.18.15 --vm-driver docker --extra-config=apiserver.service-node-port-range=1-65535
+./kubectl.exe create namespace agones-system
+./kubectl.exe apply -f https://raw.githubusercontent.com/googleforgames/agones/release-1.13.0/install/yaml/install.yaml

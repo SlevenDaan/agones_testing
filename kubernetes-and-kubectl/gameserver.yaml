@@ -1,0 +1,15 @@
+apiVersion: "agones.dev/v1"
+kind: GameServer
+metadata:
+  name: "mirror-kcp-server"
+  generateName: "mirror-kcp-server-"
+spec:
+  ports:
+  - name: default
+    portPolicy: Dynamic
+    containerPort: 7777
+  template:
+    spec:
+      containers:
+      - name: mirror-kcp-server-container
+        image: docker.io/daansleven/mirror_kcp_server:latest

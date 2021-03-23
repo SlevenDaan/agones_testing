@@ -1,0 +1,9 @@
+# DO NOT USE IN PRODUCTION, USE THE AGONES API TO ALLOCATE SERVERS
+apiVersion: "allocation.agones.dev/v1"
+kind: GameServerAllocation
+metadata:
+    generateName: "mirror-kcp-server-allocation-"
+spec:
+  required:
+    matchLabels:
+      agones.dev/fleet: mirror-kcp-server-fleet
